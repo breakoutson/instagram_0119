@@ -6,14 +6,32 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
 import streamlit as st
 
+
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+
+def get_driver():
+    return webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+
+options = Options()
+options.add_argument('--disable-gpu')
+options.add_argument('--headless')
+
+
+
+
+
 hash_tag = st.text_input("해시태그 입력 >> ")
 
 if hash_tag != '':
 
     hash_tag = hash_tag.replace(' ','')
     user_comment = '공감하고 갑니다'
-    browser = webdriver.Chrome(install())
-    browser.get("https://www.instagram.com/accounts/login/")
+    driver = get_driver()
+    driver.get('https://www.instagram.com/accounts/login/')
+#     browser = webdriver.Chrome(install())
+#     browser.get("https://www.instagram.com/accounts/login/")
     time.sleep(2)
     # 로그인 하기
     id = browser.find_element_by_name("username")
