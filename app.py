@@ -14,9 +14,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 def get_driver():
     return webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
-options = Options()
-options.add_argument('--disable-gpu')
-options.add_argument('--headless')
+# options = Options()
+# options.add_argument('--disable-gpu')
+# options.add_argument('--headless')
 
 
 hash_tag = st.text_input("해시태그 입력 >> ")
