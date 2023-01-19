@@ -11,9 +11,6 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
-def get_driver():
-    return webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
-
 # options = Options()
 # options.add_argument('--disable-gpu')
 # options.add_argument('--headless')
@@ -25,7 +22,7 @@ if hash_tag != '':
 
     hash_tag = hash_tag.replace(' ','')
     user_comment = '공감하고 갑니다'
-    browser = get_driver()
+    browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
     browser.get('https://www.instagram.com/accounts/login/')
 #     browser = webdriver.Chrome(install())
 #     browser.get("https://www.instagram.com/accounts/login/")
