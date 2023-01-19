@@ -12,7 +12,7 @@ if hash_tag != '':
 
     hash_tag = hash_tag.replace(' ','')
     user_comment = '공감하고 갑니다'
-    browser = webdriver.Chrome('Chromedriver')
+    browser = webdriver.Chrome(install())
     browser.get("https://www.instagram.com/accounts/login/")
     time.sleep(2)
     # 로그인 하기
