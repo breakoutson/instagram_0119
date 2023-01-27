@@ -17,15 +17,17 @@ def get_driver():
 
 options = Options()
 options.add_argument('--disable-gpu')
-options.add_argument('--headless')
+# options.add_argument('--headless')
+
+hash_tag = st.text_input("해시태그 입력 >> ")
 
 driver = get_driver()
 driver.get('http://www.instagram.com/accounts/login/')
 
-st.code(driver.page_source)
+# st.code(driver.page_source)
 
 
-hash_tag = st.text_input("해시태그 입력 >> ")
+
 
 if hash_tag != '':
 
