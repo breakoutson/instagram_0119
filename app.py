@@ -21,8 +21,8 @@ options.add_argument('--disable-gpu')
 
 hash_tag = st.text_input("해시태그 입력 >> ")
 
-driver = get_driver()
-driver.get('http://www.instagram.com/accounts/login/')
+browser = get_driver()
+browser.get('http://www.instagram.com/accounts/login/')
 
 time.sleep(2)
 # 로그인 하기
