@@ -20,7 +20,7 @@ options.add_argument('--disable-gpu')
 options.add_argument('--headless')
 
 driver = get_driver()
-driver.get('http://www.instagram.com/accounts/login/)
+driver.get('http://www.instagram.com/accounts/login/')
 
 st.code(driver.page_source)
 
